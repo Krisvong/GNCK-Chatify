@@ -4,6 +4,7 @@ import Chatbox from "../components/Chatbox";
 import MyChats from "../components/MyChats";
 import SideDrawer from "../components/miscellaneous/SideDrawer";
 import { ChatState } from "../Context/ChatProvider";
+import AsideMenu from "../components/miscellaneous/AsideMenu";
 
 const Chatpage = () => {
   const [fetchAgain, setFetchAgain] = useState(false); // State for triggering fetching data again
@@ -11,6 +12,7 @@ const Chatpage = () => {
 
   return (
     <div style={{ width: "100%" }}>
+      {<AsideMenu />}
       {user && <SideDrawer />} {/* Render the SideDrawer component if the user is logged in */}
       <Box d="flex" justifyContent="space-between" w="100%" h="91.5vh" p="10px">
         {user && <MyChats fetchAgain={fetchAgain} />} {/* Render the MyChats component if the user is logged in */}
