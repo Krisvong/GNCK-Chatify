@@ -1,3 +1,4 @@
+import "./Homepage.css"
 import {
   Box,
   Container,
@@ -37,9 +38,15 @@ function Homepage() {
         borderRadius="lg"
         borderWidth="1px"
       >
-        <Text fontSize="48px" fontFamily="chalkboard" color="#aa7bc3ff" fontWeight="700" textShadow="1px 1px 0px #000000">
-          Send It
-        </Text>
+        <Text
+  bgGradient='linear(to-l, #11b5e4ff, #f2cd5dff, #aa7bc3ff)'
+  bgClip='text'
+  fontSize='6xl'
+  fontFamily='chalkboard'
+  fontWeight='extrabold'
+>
+  Send It
+</Text>
       </Box>
       {/* Authentication tabs */}
       <Box bg="white" w="100%" p={4} borderRadius="lg" borderWidth="1px" color="#aa7bc3ff" textShadow=".5px .5px 0px #000000" >
