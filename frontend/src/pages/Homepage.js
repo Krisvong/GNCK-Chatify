@@ -37,8 +37,8 @@ function Homepage() {
         borderRadius="lg"
         borderWidth="1px"
       >
-        <Text fontSize="48px" fontFamily="Montserrat" color="#aa7bc3ff" fontWeight="700" textShadow="1px 1px 0px #000000">
-          Send-It
+        <Text fontSize="48px" fontFamily="chalkboard" color="#aa7bc3ff" fontWeight="700" textShadow="1px 1px 0px #000000">
+          Send It
         </Text>
       </Box>
       {/* Authentication tabs */}
