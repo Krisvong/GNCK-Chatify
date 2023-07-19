@@ -65,8 +65,8 @@ io.on("connection", (socket) => {
 
   // Socket.io setup
   socket.on("setup", (userData) => {
-    socket.join(userData._id);// Join the room using user's ID
-    socket.emit("connected");// Emit a 'connected' event to the client
+    socket.join(userData._id); // Join the room using user's ID
+    socket.emit("connected"); // Emit a 'connected' event to the client
   });
 
   socket.on("join chat", (room) => {
@@ -86,7 +86,7 @@ io.on("connection", (socket) => {
     chat.users.forEach((user) => {
       if (user._id == newMessageRecieved.sender._id) return;
 
-      socket.in(user._id).emit("message recieved", newMessageRecieved);
+      socket.in(user._id).emit("message received", newMessageRecieved);
     });
   });
 

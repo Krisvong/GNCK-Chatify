@@ -1,5 +1,3 @@
-// represents a single chat window
-
 import { FormControl } from "@chakra-ui/form-control";
 import { Input } from "@chakra-ui/input";
 import { Box, Text } from "@chakra-ui/layout";
@@ -19,7 +17,7 @@ import UpdateGroupChatModal from "./miscellaneous/UpdateGroupChatModal";
 import { ChatState } from "../Context/ChatProvider";
 
 const ENDPOINT = "http://localhost:5001";
-var socket, selectedChatCompare;
+let socket;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
   // State variables
@@ -29,6 +27,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
   const [socketConnected, setSocketConnected] = useState(false);
   const [typing, setTyping] = useState(false);
   const [istyping, setIsTyping] = useState(false);
+  const [selectedChatCompare, setSelectedChatCompare] = useState(null);
   const toast = useToast();
 
   // Animation options for Lottie animation
@@ -99,12 +98,12 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
           "/api/message",
           {
             content: newMessage,
-            chatId: selectedChat,
+            chatId: selectedChat._id,
           },
           config
         );
         socket.emit("new message", data);
-        setMessages([...messages, data]);
+        setMessages((prevMessages) => [...prevMessages, data]);
       } catch (error) {
         toast({
           title: "Error Occurred!",
@@ -126,15 +125,17 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
     socket.on("typing", () => setIsTyping(true));
     socket.on("stop typing", () => setIsTyping(false));
 
-    // eslint-disable-next-line
-  }, []);
+    return () => {
+      // Clean up the socket connection when the component unmounts
+      socket.disconnect();
+    };
+  }, [user]);
 
   useEffect(() => {
     // Fetch messages when the selected chat changes
     fetchMessages();
 
-    selectedChatCompare = selectedChat;
-    // eslint-disable-next-line
+    setSelectedChatCompare(selectedChat);
   }, [selectedChat]);
 
   useEffect(() => {
@@ -145,14 +146,19 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
         selectedChatCompare._id !== newMessageReceived.chat._id
       ) {
         if (!notification.includes(newMessageReceived)) {
-          setNotification([newMessageReceived, ...notification]);
-          setFetchAgain(!fetchAgain);
+          setNotification((prevNotification) => [newMessageReceived, ...prevNotification]);
+          setFetchAgain((prevFetchAgain) => !prevFetchAgain);
         }
       } else {
-        setMessages([...messages, newMessageReceived]);
+        setMessages((prevMessages) => [...prevMessages, newMessageReceived]);
       }
     });
-  });
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      socket.off("message received");
+    };
+  }, [fetchAgain, notification, selectedChatCompare, setFetchAgain, setNotification]);
 
   // Handles typing event and emits typing and stop typing events to the socket
   const typingHandler = (e) => {
