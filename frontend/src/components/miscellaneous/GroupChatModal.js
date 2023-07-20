@@ -78,7 +78,7 @@ const GroupChatModal = ({ children }) => {
     }
   };
 
-   // Remove user from selected users list
+  // Remove user from selected users list
   const handleDelete = (delUser) => {
     setSelectedUsers(selectedUsers.filter((sel) => sel._id !== delUser._id));
   };

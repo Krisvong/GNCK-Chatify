@@ -18,7 +18,7 @@ const ScrollableChat = ({ messages }) => {
       {messages &&
         messages.map((m, i) => (
           <div style={{ display: "flex" }} key={m._id}>
-             {/* Render the sender's avatar if it's a new sender or the last message */}
+            {/* Render the sender's avatar if it's a new sender or the last message */}
             {(isSameSender(messages, m, i, user._id) ||
               isLastMessage(messages, i, user._id)) && (
               <Tooltip label={m.sender.name} placement="bottom-start" hasArrow>

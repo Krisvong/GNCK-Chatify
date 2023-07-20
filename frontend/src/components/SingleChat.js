@@ -42,13 +42,8 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
   };
 
   // Accessing selectedChat and user from ChatState context
-  const {
-    selectedChat,
-    setSelectedChat,
-    user,
-    notification,
-    setNotification,
-  } = ChatState();
+  const { selectedChat, setSelectedChat, user, notification, setNotification } =
+    ChatState();
 
   // Fetches messages for the selected chat
   const fetchMessages = async () => {

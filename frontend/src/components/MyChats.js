@@ -57,7 +57,6 @@ const MyChats = ({ fetchAgain }) => {
       bg="rgba(0, 0, 0, 0.4)"
       w={{ base: "100%", md: "31%" }}
       borderRadius="lg"
-     
     >
       <Box
         pb={3}
@@ -66,7 +65,6 @@ const MyChats = ({ fetchAgain }) => {
         fontFamily="Work sans"
         d="flex"
         w="100%"
-      
         justifyContent="space-between"
         alignItems="center"
       >

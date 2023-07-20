@@ -16,7 +16,6 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  
 
   // Access the browser history object for navigation
   const history = useHistory();
@@ -83,9 +82,8 @@ const Login = () => {
   };
 
   return (
-    <VStack spacing="10px" height="400px"   >
-      <FormControl id="email" isRequired >
-    
+    <VStack spacing="10px" height="400px">
+      <FormControl id="email" isRequired>
         <FormLabel>Email Address</FormLabel>
         <Input
           value={email}
@@ -103,7 +101,7 @@ const Login = () => {
             type={show ? "text" : "password"}
             placeholder="Enter password"
           />
-           {/* Toggle password visibility button */}
+          {/* Toggle password visibility button */}
           <InputRightElement width="4.5rem">
             <Button h="1.75rem" size="sm" onClick={handleClick}>
               {show ? "Hide" : "Show"}
@@ -122,7 +120,7 @@ const Login = () => {
       >
         Login
       </Button>
-           {/* Set guest credentials button */}
+      {/* Set guest credentials button */}
       <Button
         variant="solid"
         bg="#aa7bc3ff"
