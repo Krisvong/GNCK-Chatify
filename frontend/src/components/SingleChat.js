@@ -103,7 +103,8 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
           config
         );
         socket.emit("new message", data);
-        setMessages((prevMessages) => [...prevMessages, data]);
+        //emits a "new message" event through a socket connection and updates the state of messages by adding the new message to the previous array of messages.
+        setMessages((prevMessages) => [...prevMessages, data]); 
       } catch (error) {
         toast({
           title: "Error Occurred!",
