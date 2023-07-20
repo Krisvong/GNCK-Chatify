@@ -1,22 +1,20 @@
-const mongoose = require("mongoose");
+// Middleware function for handling 404 errors (Not Found)
+const notFound = (req, res, next) => {
+  const error = new Error(`Not Found - ${req.originalUrl}`);
+  res.status(404); // Set response status code to 404 (Not Found)
+  next(error); // Pass the error object to the next middleware/error handler
+};
 
-// Define the chat model schema
-const chatModel = mongoose.Schema(
-  {
-    chatName: { type: String, trim: true }, // Name of the chat
-    isGroupChat: { type: Boolean, default: false }, // Indicates if the chat is a group chat
-    users: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }], // Array of user IDs participating in the chat
-    latestMessage: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Message",
-    }, // ID of the latest message in the chat
-    groupAdmin: { type: mongoose.Schema.Types.ObjectId, ref: "User" }, // ID of the group chat admin
-  },
-  { timestamps: true } // Adds timestamps for createdAt and updatedAt fields
-);
+// Middleware function for handling general errors
+const errorHandler = (err, req, res, next) => {
+  const statusCode = res.statusCode === 200 ? 500 : res.statusCode;
+  res.status(statusCode); // Set the response status code to the determined status code
+  res.json({
+    message: err.message, // Include the error message in the response
+    stack: process.env.NODE_ENV === "production" ? null : err.stack,
+    // Include the error stack trace in development mode (security measure in production)
+  });
+};
 
-// Create the Chat model based on the chatModel schema
-const Chat = mongoose.model("Chat", chatModel);
-
-// Export the Chat model
-module.exports = Chat;
+// Export the middleware functions
+module.exports = { notFound, errorHandler };
