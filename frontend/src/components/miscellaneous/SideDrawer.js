@@ -1,4 +1,4 @@
-// provides functionality for searching users, accessing chats, displaying notifications, and user actions. 
+// provides functionality for searching users, accessing chats, displaying notifications, and user actions.
 // Importing necessary dependencies and components
 import { Button } from "@chakra-ui/button";
 import { useDisclosure } from "@chakra-ui/hooks";
@@ -139,18 +139,23 @@ function SideDrawer() {
         bg="0, 0, 0, 0.1"
         w="100%"
         p="5px 10px 5px 10px"
-        
       >
         <Tooltip label="Search Users to chat" hasArrow placement="bottom-end">
-          <Button variant="ghost" bg="0, 0, 0, 0.1" onClick={onOpen}>
+          <Button variant="solid" bg="#aa7bc3" color="#d9fff8" onClick={onOpen}>
             <i className="fas fa-search"></i>
             <Text d={{ base: "none", md: "flex" }} px={4}>
               Search User
             </Text>
           </Button>
         </Tooltip>
-         <Text fontSize="48px" fontFamily="Montserrat" color="#aa7bc3ff" fontWeight="700">
-          Send-It
+        <Text
+          bgGradient="linear(to-l, #d9fff8, #11b5e4ff )"
+          bgClip="text"
+          fontSize="6xl"
+          fontFamily= 'Sora'
+          fontWeight="extrabold"
+        >
+          Send It
         </Text>
         <div>
           <Menu>
@@ -179,7 +184,11 @@ function SideDrawer() {
             </MenuList>
           </Menu>
           <Menu>
-            <MenuButton as={Button} bg="0, 0, 0, 0.1" rightIcon={<ChevronDownIcon />}>
+            <MenuButton
+              as={Button}
+              bg="0, 0, 0, 0.1"
+              rightIcon={<ChevronDownIcon />}
+            >
               <Avatar
                 size="sm"
                 cursor="pointer"
@@ -214,12 +223,12 @@ function SideDrawer() {
             </Box>
             {loading ? (
               <ChatLoading />
-            ) : (
-              searchResult?.map((user) => (
+            )  : (
+              searchResult?.map((searchUser) => (
                 <UserListItem
-                  key={user._id}
-                  user={user}
-                  handleFunction={() => accessChat(user._id)}
+                  key={searchUser._id}
+                  user={searchUser}
+                  handleFunction={() => accessChat(searchUser._id)}
                 />
               ))
             )}
