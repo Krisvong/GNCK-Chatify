@@ -1,4 +1,4 @@
-// provides functionality for searching users, accessing chats, displaying notifications, and user actions. 
+// provides functionality for searching users, accessing chats, displaying notifications, and user actions.
 // Importing necessary dependencies and components
 import { Button } from "@chakra-ui/button";
 import { useDisclosure } from "@chakra-ui/hooks";
@@ -149,7 +149,12 @@ function SideDrawer() {
             </Text>
           </Button>
         </Tooltip>
-         <Text fontSize="48px" fontFamily="Montserrat" color="#aa7bc3ff" fontWeight="700">
+        <Text
+          fontSize="48px"
+          fontFamily="Montserrat"
+          color="#aa7bc3ff"
+          fontWeight="700"
+        >
           Send-It
         </Text>
         <div>
@@ -215,11 +220,11 @@ function SideDrawer() {
             {loading ? (
               <ChatLoading />
             ) : (
-              searchResult?.map((user) => (
+              searchResult?.map((searchUser) => (
                 <UserListItem
-                  key={user._id}
-                  user={user}
-                  handleFunction={() => accessChat(user._id)}
+                  key={searchUser._id}
+                  user={searchUser}
+                  handleFunction={() => accessChat(searchUser._id)}
                 />
               ))
             )}
