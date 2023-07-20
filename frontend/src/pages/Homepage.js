@@ -1,4 +1,3 @@
-import "./Homepage.css"
 import {
   Box,
   Container,
@@ -26,7 +25,7 @@ function Homepage() {
   }, [history]);
 
   return (
-    <Container maxW="xl" centerContent >
+    <Container maxW="xl" centerContent>
       {/* Logo */}
       <Box
         d="flex"
@@ -38,24 +37,25 @@ function Homepage() {
         borderRadius="lg"
         borderWidth="1px"
       >
-<<<<<<< HEAD
         <Text
-  bgGradient='linear(to-l, #11b5e4ff, #f2cd5dff, #aa7bc3ff)'
-  bgClip='text'
-  fontSize='6xl'
-  fontFamily='chalkboard'
-  fontWeight='extrabold'
->
-  Send It
-</Text>
-=======
-        <Text fontSize="48px" fontFamily="Montserrat"  color="#11b5e4" fontWeight="700" textShadow="2px 2px 2px #272932" >
+          fontSize="48px"
+          fontFamily="Montserrat"
+          color="#11b5e4"
+          fontWeight="700"
+          textShadow="2px 2px 2px #272932"
+        >
           Send-It
         </Text>
->>>>>>> 2621efecda4adc7407192bbf190d85924d17d7df
       </Box>
       {/* Authentication tabs */}
-      <Box bg="rgba(0, 0, 0, 0.3)" w="100%" p={4} borderRadius="lg" borderWidth="1px" color="#272932"  >
+      <Box
+        bg="rgba(0, 0, 0, 0.3)"
+        w="100%"
+        p={4}
+        borderRadius="lg"
+        borderWidth="1px"
+        color="#272932"
+      >
         <Tabs isFitted variant="soft-rounded">
           <TabList mb="1em">
             <Tab>Login</Tab>
@@ -64,11 +64,11 @@ function Homepage() {
           {/* Tab panels */}
           <TabPanels>
             <TabPanel>
-               {/* Login component */}
+              {/* Login component */}
               <Login />
             </TabPanel>
             <TabPanel>
-               {/* Signup component */}
+              {/* Signup component */}
               <Signup />
             </TabPanel>
           </TabPanels>
