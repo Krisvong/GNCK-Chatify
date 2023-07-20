@@ -1,14 +1,13 @@
+import { Button, ButtonGroup } from "@chakra-ui/button";
 import {
-    Button,
-    ButtonGroup,
-    Wrap,
-    WrapItem,
-    IconButton,
-    AddIcon,
-    ChatIcon,
-    SunIcon,
-    SettingsIcon
-} from "@chakra-ui/button";
+  Wrap,
+  WrapItem,
+  IconButton,
+  AddIcon,
+  ChatIcon,
+  SunIcon,
+  SettingsIcon,
+} from "@chakra-ui/react";
 import { Stack, Box } from "@chakra/Stack"
 
 function AsideMenu() {
