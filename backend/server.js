@@ -6,7 +6,7 @@ const chatRoutes = require("./routes/chatRoutes");
 const messageRoutes = require("./routes/messageRoutes");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 const path = require("path");
-const mongoose = require("mongoose");
+const mongoose = require('mongoose')
 
 dotenv.config();
 connectDB();
@@ -44,7 +44,7 @@ if (process.env.NODE_ENV === "production") {
 app.use(notFound);
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT || 5001
 
 const server = app.listen(
   PORT,

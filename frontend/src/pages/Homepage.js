@@ -26,18 +26,19 @@ function Homepage() {
   }, [history]);
 
   return (
-    <Container maxW="xl" centerContent>
+    <Container maxW="xl" centerContent >
       {/* Logo */}
       <Box
         d="flex"
         justifyContent="center"
         p={3}
-        bg="white"
+        bg="rgba(0, 0, 0, 0.3)"
         w="100%"
         m="40px 0 15px 0"
         borderRadius="lg"
         borderWidth="1px"
       >
+<<<<<<< HEAD
         <Text
   bgGradient='linear(to-l, #11b5e4ff, #f2cd5dff, #aa7bc3ff)'
   bgClip='text'
@@ -47,9 +48,14 @@ function Homepage() {
 >
   Send It
 </Text>
+=======
+        <Text fontSize="48px" fontFamily="Montserrat"  color="#11b5e4" fontWeight="700" textShadow="2px 2px 2px #272932" >
+          Send-It
+        </Text>
+>>>>>>> 2621efecda4adc7407192bbf190d85924d17d7df
       </Box>
       {/* Authentication tabs */}
-      <Box bg="white" w="100%" p={4} borderRadius="lg" borderWidth="1px" color="#aa7bc3ff" textShadow=".5px .5px 0px #000000" >
+      <Box bg="rgba(0, 0, 0, 0.3)" w="100%" p={4} borderRadius="lg" borderWidth="1px" color="#272932"  >
         <Tabs isFitted variant="soft-rounded">
           <TabList mb="1em">
             <Tab>Login</Tab>
