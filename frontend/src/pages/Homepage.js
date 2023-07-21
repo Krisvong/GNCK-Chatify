@@ -1,3 +1,4 @@
+import "./Homepage.css";
 import {
   Box,
   Container,
@@ -31,35 +32,46 @@ function Homepage() {
         d="flex"
         justifyContent="center"
         p={3}
-        bg="rgba(0, 0, 0, 0.3)"
+        bg="rgba(0, 0, 0, 0.4)"
         w="100%"
         m="40px 0 15px 0"
-        borderRadius="lg"
-        borderWidth="1px"
+        borderRadius="1em"
       >
         <Text
-          fontSize="48px"
-          fontFamily="Montserrat"
-          color="#11b5e4"
-          fontWeight="700"
-          textShadow="2px 2px 2px #272932"
+          bgGradient="linear(to-l, #d9fff8, #11b5e4ff )"
+          bgClip="text"
+          fontSize="6xl"
+          fontFamily="chalkboard"
+          fontWeight="extrabold"
         >
-          Send-It
+          Send It
         </Text>
       </Box>
       {/* Authentication tabs */}
       <Box
-        bg="rgba(0, 0, 0, 0.3)"
+        bg="rgba(0, 0, 0, 0.4)"
+        borderRadius="1em"
         w="100%"
         p={4}
-        borderRadius="lg"
-        borderWidth="1px"
-        color="#272932"
+        color="#aa7bc3ff"
+        // textShadow=".5px .5px 0px #000000"
       >
         <Tabs isFitted variant="soft-rounded">
           <TabList mb="1em">
-            <Tab>Login</Tab>
-            <Tab>Sign Up</Tab>
+            <Tab
+              _selected={{ color: "#d9fff8", bg: "#aa7bc3", border: "0px" }}
+              bg="#d9fff8"
+              color="#aa7bc3"
+            >
+              Login
+            </Tab>
+            <Tab
+              _selected={{ color: "#d9fff8", bg: "#aa7bc3", border: "0px" }}
+              bg="#d9fff8"
+              color="#aa7bc3"
+            >
+              Sign Up
+            </Tab>
           </TabList>
           {/* Tab panels */}
           <TabPanels>
