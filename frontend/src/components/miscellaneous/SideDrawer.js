@@ -141,7 +141,7 @@ function SideDrawer() {
         p="5px 10px 5px 10px"
       >
         <Tooltip label="Search Users to chat" hasArrow placement="bottom-end">
-          <Button variant="ghost" bg="0, 0, 0, 0.1" onClick={onOpen}>
+          <Button variant="solid" bg="#aa7bc3" color="#d9fff8" onClick={onOpen}>
             <i className="fas fa-search"></i>
             <Text d={{ base: "none", md: "flex" }} px={4}>
               Search User
@@ -149,12 +149,13 @@ function SideDrawer() {
           </Button>
         </Tooltip>
         <Text
-          fontSize="48px"
-          fontFamily="Montserrat"
-          color="#aa7bc3ff"
-          fontWeight="700"
+          bgGradient="linear(to-l, #d9fff8, #11b5e4ff )"
+          bgClip="text"
+          fontSize="6xl"
+          fontFamily="Sora"
+          fontWeight="extrabold"
         >
-          Send-It
+          Send It
         </Text>
         <div>
           <Menu>
@@ -223,11 +224,11 @@ function SideDrawer() {
             {loading ? (
               <ChatLoading />
             ) : (
-              searchResult?.map((user) => (
+              searchResult?.map((searchUser) => (
                 <UserListItem
-                  key={user._id}
-                  user={user}
-                  handleFunction={() => accessChat(user._id)}
+                  key={searchUser._id}
+                  user={searchUser}
+                  handleFunction={() => accessChat(searchUser._id)}
                 />
               ))
             )}
