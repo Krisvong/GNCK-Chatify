@@ -93,4 +93,8 @@ https://socket.io/
 
 
 
+# 7. Demo:
 
+see the deployed version and demo it here:
+
+https://gnck-send-it-c75ccd121857.herokuapp.com/
