@@ -101,15 +101,15 @@ https://gnck-send-it-c75ccd121857.herokuapp.com/chats
 
 
 
-# 8.  Bugs and "To be Worked on"
+# 8.  Bugs and "Fixes"
 
 As novice developers, the team is quite proud of the accomplishments that we have achieved here, but with that said, there are some bugs, and also there were some things that we simply did not get to, that we would have liked to.  
 
-* 1. Sign up page does not go straight to chat
-* 2. Guest Credentials functionality. Show a guest a preview of the page.
-* 3. Background color on search user button on hover. Blue border for Chackra buttons.
-* 4. Built in Emoji menu, being able to select an avatar as opposed to a picture that is stored locally.
-* 5. Styling on typing await bubbles.
-* 6. Realtime chat doesn't work on the deployed version.  
-* 7. Being able to delete chats.
-* 8. Message cache being cleared without a refresh.  
+*  Sign up page does not go straight to chat
+*  Guest Credentials functionality. Show a guest a preview of the page.
+*  Background color on search user button on hover. Blue border for Chackra buttons.
+*  Built in Emoji menu, being able to select an avatar as opposed to a picture that is stored locally.
+*  Styling on typing await bubbles.
+*  Realtime chat doesn't work on the deployed version.  
+*  Being able to delete chats.
+*  Message cache being cleared without a refresh.  
