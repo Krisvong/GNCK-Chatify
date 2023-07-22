@@ -46,6 +46,7 @@ Refine the user interface and experience based on feedback and usability testing
 Who among us does not feel that the internet's main function has not always been to facilitate communication? As novice developers we did not set out to reinvent communication, just to build an intuitive app that would allow brief chats between friends.  A user first must register, or sign in and create a profile, then they can search for others and finally send messages, and have the communication string be visible for reference.  
 # 4. About the Team
 Casey:
+
 Hey I'm Casey. I have been a stay at home mom for a few years and now looking for a change of scenery! I enjoy technology and learning new skills as well as creating and fixing projects. I would love to pursue something with the car industry and software. Here's to a new journey!
 
 Nick:
@@ -61,7 +62,7 @@ Gregg:
 Gregg has spent the last many years opening and developing a venerable local eatery/institution, but has now decided to try his hand at a different kind of development. He likes to debate matters of great import with his adult sons, and is obsessed with electrified stringed instruments.
 
 # 5. Tech
-The team made use of an Express App running React and a Mongo database to keep track of everything, all of which is running in a Node environment and deployed to the cloud via Heroku.  
+The team made use of an Express App running React and a Mongo database to keep track of everything, all of which is running in a Node environment and deployed to the cloud via Heroku.  Chakra styling library was implemented and SocketIO was used for the realtime messaging functionality.  
 
 # 6. Citations
 The team was careful to do their own work to bring the app to life, but as good developers do, some references were used for their documentation.  
@@ -113,3 +114,6 @@ As novice developers, the team is quite proud of the accomplishments that we hav
 *  Realtime chat doesn't work on the deployed version.  
 *  Being able to delete chats.
 *  Message cache being cleared without a refresh.  
+*  Being able to edit a profile once it's created. 
+*  Does not log user out when window is closed.  
+*  Search Users field does not auto clear.  
