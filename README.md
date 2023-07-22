@@ -93,6 +93,12 @@ https://socket.io/docs/v4/faq/
 https://socket.io/
 
 
+### Chakra UI Webdocs
+author: Chakra UI
+date: last updated June 12 2023
+https://chakra-ui.com/getting-started
+https://chakra-ui.com/
+
 
 # 7. Demo:
 
