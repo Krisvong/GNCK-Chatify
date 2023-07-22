@@ -41,7 +41,7 @@ function Homepage() {
           bgGradient="linear(to-l, #d9fff8, #11b5e4ff )"
           bgClip="text"
           fontSize="6xl"
-          fontFamily="chalkboard"
+          fontFamily="Sora"
           fontWeight="extrabold"
         >
           Send It
