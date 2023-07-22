@@ -111,7 +111,7 @@ As novice developers, the team is quite proud of the accomplishments that we hav
 *  Background color on search user button on hover. Blue border for Chackra buttons.
 *  Built in Emoji menu, being able to select an avatar as opposed to a picture that is stored locally.
 *  Styling on typing await bubbles.
-*  Realtime chat doesn't work on the deployed version.  
+*  Realtime chat doesn't work on the deployed version, which we are trying to determine if its a build issue in Heroku, or a DB issue in Mongo.    
 *  Being able to delete chats.
 *  Message cache being cleared without a refresh.  
 *  Being able to edit a profile once it's created. 
